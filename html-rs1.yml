@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myhtml
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: dev
+      app: html
+  template:
+    metadata:
+      name: myhtml
+      labels:
+        env: dev
+        app: html
+    spec:
+      containers:
+      - name: "myhtml"
+        image: "divyansh747/httpdd"
+        volumeMounts:
+         - name: html-pvc
+           mountPath: /var/www/html
+      volumes:
+       - name: html-pvc
+         persistentVolumeClaim:
+           claimName: data-pvc
