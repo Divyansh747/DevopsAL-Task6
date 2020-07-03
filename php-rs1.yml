@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myphp
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: dev
+      app: php
+  template:
+    metadata:
+      name: myphp
+      labels:
+        env: dev
+        app: php
+    spec:
+      containers:
+      - name: "myphp"
+        image: "vimal13/apache-webserver-php"
+        volumeMounts:
+         - name: html-host
+           mountPath: /var/www/html
+      volumes:
+       - name: html-host
+         persistentVolumeClaim:
+           claimName: data-pvc
