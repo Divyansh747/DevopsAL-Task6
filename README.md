@@ -30,3 +30,5 @@ Perform third task with the help of Jenkins coding file ( called as jenkinsfile 
 7. Job3 : Test your app if it is working or not.
 
 8. Job4 : if app is not working , then send email to developer with error messages and redeploy the application after code is being edited by the developer
+
+Article link:- https://www.linkedin.com/pulse/devops-task-3-integrating-jenkins-kubernetes-using-rahangdale/?trackingId=B%2Fd%2Bh3%2BBT4uVimQ85YQqjA%3D%3D
